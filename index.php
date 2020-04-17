@@ -4,8 +4,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS_TOKEN'));
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET')]);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('5lL/A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu/REJCERZbvGoAfWDImrhaPqXOCzgFxTSn+TnlpanSC0l2by/y62jy28JUwdB04t89/1O/w1cDnyilFU='));
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('8bbe47439649fb8e5d0062701c92330d')]);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 
 $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
@@ -18,7 +18,7 @@ foreach ($events as $event) {
         $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu(getenv('CHANNEL_ACCESS_TOKEN'))));
       }
       else if($event->getText() === 'list') {
-        $result = getListOfRichmenu(getenv('CHANNEL_ACCESS_TOKEN'));
+        $result = getListOfRichmenu(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'));
 
         if(isset($result['richmenus']) && count($result['richmenus']) > 0) {
           $builders = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
