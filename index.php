@@ -15,7 +15,7 @@ foreach ($events as $event) {
     if($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
 
       if($event->getText() === 'create') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu(getenv('CHANNEL_ACCESS_TOKEN'))));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'))));
       }
       else if($event->getText() === 'list') {
         $result = getListOfRichmenu(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'));
@@ -58,19 +58,19 @@ foreach ($events as $event) {
         }
       }
       else if($event->getText() === 'unlink') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(unlinkFromUser(getenv('CHANNEL_ACCESS_TOKEN'), $event->getUserId())));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(unlinkFromUser(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'), $event->getUserId())));
       }
       else if($event->getText() === 'check') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser(getenv('CHANNEL_ACCESS_TOKEN'), $event->getUserId())));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'), $event->getUserId())));
       }
       else if(substr($event->getText(),0, 8) === 'upload::') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu(getenv('CHANNEL_ACCESS_TOKEN'), substr($event->getText(), 8))));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'), substr($event->getText(), 8))));
       }
       else if(substr($event->getText(),0, 8) === 'delete::') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(deleteRichmenu(getenv('CHANNEL_ACCESS_TOKEN'), substr($event->getText(), 8))));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(deleteRichmenu(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'), substr($event->getText(), 8))));
       }
       else if(substr($event->getText(),0, 6) === 'link::') {
-        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser(getenv('CHANNEL_ACCESS_TOKEN'), $event->getUserId(), substr($event->getText(), 6))));
+        $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser(getenv('A9DmiGIF8zPinW2JZAFc1XuZHd3Bm7jcTZQ8OuJxETRiEhLKgo4NLSjLu51qsLmTRp7ZWbUjkgw9umOBKcpjjzCu'), $event->getUserId(), substr($event->getText(), 6))));
       }
       else {
         $bot->replyMessage($event->getReplyToken(),new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(
